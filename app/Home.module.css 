@@ -1,5 +1,4 @@
 /* app/Home.module.css */
-
 .header {
   background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-dark) 100%);
   color: white;

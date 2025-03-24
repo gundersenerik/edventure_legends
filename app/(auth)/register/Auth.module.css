@@ -1,0 +1,103 @@
+/* app/login/Auth.module.css and app/register/Auth.module.css */
+
+.authContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    padding: 2rem 1rem;
+  }
+  
+  .authCard {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .authTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formLabel {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+  }
+  
+  .formInput {
+    padding: 0.75rem;
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+  }
+  
+  .formInput:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+  }
+  
+  .authButton {
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .authButton:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .authButton:disabled {
+    background-color: var(--gray-medium);
+    cursor: not-allowed;
+  }
+  
+  .authFooter {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--gray-dark);
+  }
+  
+  .authLink {
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .authLink:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+  }
+  
+  .errorAlert {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+  }

@@ -1,0 +1,598 @@
+/* app/game/[id]/session/GameSession.module.css */
+
+.gameContainer {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 300px;
+    background-color: white;
+    border-right: 1px solid var(--gray-light);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .gameContainer {
+      flex-direction: column;
+    }
+    
+    .sidebar {
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid var(--gray-light);
+    }
+  }
+  
+  .backLink {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .backLink:hover {
+    color: var(--primary-dark);
+  }
+  
+  .backLink svg {
+    margin-right: 0.5rem;
+  }
+  
+  /* Character card styles */
+  .characterCard {
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .characterName {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 0.25rem;
+  }
+  
+  .characterArchetype {
+    color: var(--gray-dark);
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+  }
+  
+  .attributesContainer {
+    margin-bottom: 1.25rem;
+  }
+  
+  .attributesTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+  }
+  
+  .attributesList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .attributeItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .attributeName {
+    width: 80px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .attributeBar {
+    flex-grow: 1;
+    height: 8px;
+    background-color: var(--gray-light);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .attributeFill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+  }
+  
+  .attributeValue {
+    width: 25px;
+    text-align: right;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .characterDetailsButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background-color: white;
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    cursor: pointer;
+  }
+  
+  .characterDetailsButton:hover {
+    background-color: var(--gray-light);
+  }
+  
+  .buttonIcon {
+    margin-right: 0.5rem;
+  }
+  
+  /* Quests card styles */
+  .questsCard {
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+  }
+  
+  .questsTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+  }
+  
+  .questsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .questItem {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 0.75rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .questTitle {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+  }
+  
+  .questDescription {
+    font-size: 0.8125rem;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+  
+  .questProgress {
+    margin-top: 0.5rem;
+  }
+  
+  .progressLabel {
+    font-size: 0.75rem;
+    color: var(--gray-dark);
+    margin-bottom: 0.25rem;
+  }
+  
+  .progressBar {
+    height: 6px;
+    background-color: var(--gray-light);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  
+  .progressFill {
+    height: 100%;
+    background-color: var(--success);
+    border-radius: 3px;
+  }
+  
+  .emptyQuests {
+    text-align: center;
+    color: var(--gray-dark);
+    font-size: 0.875rem;
+    padding: 1rem 0;
+  }
+  
+  /* Main content styles */
+  .mainContent {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .gameHeader {
+    padding: 1.25rem;
+    background-color: white;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  
+  .gameTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 0.25rem;
+  }
+  
+  .learningObjective {
+    font-size: 0.9375rem;
+    color: var(--gray-dark);
+  }
+  
+  /* Scene container styles */
+  .sceneContainer {
+    padding: 1.5rem;
+    background-color: white;
+    border-bottom: 1px solid var(--gray-light);
+    overflow-y: auto;
+  }
+  
+  .sceneTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+  }
+  
+  .sceneDescription {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .npcsContainer {
+    margin-bottom: 1.5rem;
+  }
+  
+  .npcDialogue {
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  .npcName {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+  }
+  
+  .dialogueContent {
+    font-style: italic;
+  }
+  
+  .educationalContent {
+    background-color: rgba(236, 72, 153, 0.1);
+    border-left: 4px solid var(--secondary-color);
+    padding: 1rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  }
+  
+  .educationalContent h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .contentIcon {
+    margin-right: 0.5rem;
+  }
+  
+  /* Chat container styles */
+  .chatContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-light);
+    overflow: hidden;
+  }
+  
+  .gameHistory {
+    flex-grow: 1;
+    padding: 1.25rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .historyEntry {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .narratorMessage,
+  .playerMessage {
+    display: flex;
+    gap: 0.75rem;
+    max-width: 80%;
+  }
+  
+  .playerMessage {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+  }
+  
+  .narratorIcon,
+  .playerIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  
+  .narratorIcon {
+    background-color: var(--gray-dark);
+    color: white;
+  }
+  
+  .playerIcon {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .messageContent {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .playerMessage .messageContent {
+    background-color: var(--primary-light);
+    color: white;
+  }
+  
+  .messageSender {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+  }
+  
+  .messageText {
+    line-height: 1.5;
+  }
+  
+  /* Action container styles */
+  .actionContainer {
+    padding: 1rem;
+    background-color: white;
+    border-top: 1px solid var(--gray-light);
+  }
+  
+  .suggestionContainer {
+    margin-bottom: 1rem;
+  }
+  
+  .suggestionLabel {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--gray-dark);
+  }
+  
+  .suggestionButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .suggestionButton {
+    padding: 0.5rem 0.75rem;
+    background-color: var(--background-light);
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .suggestionButton:hover {
+    background-color: var(--gray-light);
+    border-color: var(--gray-dark);
+  }
+  
+  .suggestionButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .actionForm {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .diceButton {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-light);
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    color: var(--gray-dark);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .diceButton:hover {
+    background-color: var(--gray-light);
+    color: var(--text-dark);
+  }
+  
+  .actionInput {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+  }
+  
+  .actionInput:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+  }
+  
+  .actionInput:disabled {
+    background-color: var(--gray-light);
+    cursor: not-allowed;
+  }
+  
+  .actionButton {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .actionButton:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .actionButton:disabled {
+    background-color: var(--gray-medium);
+    cursor: not-allowed;
+  }
+  
+  .processingIndicator {
+    display: flex;
+    align-items: center;
+    margin-top: 0.75rem;
+  }
+  
+  .typingDots {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.75rem;
+  }
+  
+  .typingDots span {
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+  }
+  
+  .typingDots span:nth-child(1) {
+    animation-delay: -0.32s;
+  }
+  
+  .typingDots span:nth-child(2) {
+    animation-delay: -0.16s;
+  }
+  
+  @keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+  }
+  
+  .processingText {
+    font-size: 0.875rem;
+    color: var(--gray-dark);
+  }
+  
+  /* Loading state */
+  .loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+  }
+  
+  .loadingSpinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--gray-light);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loadingText {
+    font-size: 1.1rem;
+    color: var(--gray-dark);
+  }
+  
+  /* Error state */
+  .errorContainer {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .errorTitle {
+    color: var(--error);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .errorText {
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .button:hover {
+    background-color: var(--primary-dark);
+  }
